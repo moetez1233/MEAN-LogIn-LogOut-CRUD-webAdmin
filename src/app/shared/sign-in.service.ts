@@ -1,22 +1,19 @@
 import { Injectable } from '@angular/core';
-import { User } from './user.model';
+import { userAuth } from './UserAuth';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
-  selectedUser: User = {
-    fullName: '',
+export class SignInService {
+  selectedUser: userAuth = {
     email: '',
     password: '',
     
   };
+
   constructor(private http:HttpClient) { }
-  postUser(user: User){
-    return this.http.post(environment.apiBaseUrl+'/registrer',user);
-  }
-  getemploye(){
-    return this.http.get(environment.apiBaseUrl+'/employe')
+  AuthUser(userAuth: userAuth){
+    return this.http.post(environment.apiBaseUrl+'/Auth',userAuth);
   }
 }

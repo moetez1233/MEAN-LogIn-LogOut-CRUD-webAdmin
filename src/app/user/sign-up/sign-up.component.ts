@@ -29,11 +29,19 @@ export class SignUpComponent implements OnInit {
 
   }
   onSubmit(form: NgForm) {
+    console.log(form.value);
+    form.value.isAdmin=(document.getElementById('flexSwitchCheckDefault') as HTMLInputElement).checked
+    console.log(form.value);
+    
+    
     this.userService.postUser(form.value).subscribe(
       res => {
+        console.log(res);
+        
         this.showSucessMessage = true;
         setTimeout(() => this.showSucessMessage = false, 4000);
         this.resetForm(form);
+        (document.getElementById('flexSwitchCheckDefault') as HTMLInputElement).checked=false;
       },
       err => {
         
@@ -51,7 +59,8 @@ export class SignUpComponent implements OnInit {
     this.userService.selectedUser = {
       fullName: '',
       email: '',
-      password: ''
+      password: '',
+    
     };
     form.resetForm();
     this.serverErrorMessages = '';

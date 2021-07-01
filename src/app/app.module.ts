@@ -8,13 +8,19 @@ import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { SignUpComponent } from './user/sign-up/sign-up.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SignInComponent } from './user/sign-in/sign-in.component';
+import { CRUDEmployeComponent } from './Employees/crud-employe/crud-employe.component';
+import { NavBarHeaderComponent } from './header/nav-bar-header/nav-bar-header.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
-    SignUpComponent
+    SignUpComponent,
+    SignInComponent,
+    CRUDEmployeComponent,
+    NavBarHeaderComponent
   ],
   imports: [
     BrowserModule,
