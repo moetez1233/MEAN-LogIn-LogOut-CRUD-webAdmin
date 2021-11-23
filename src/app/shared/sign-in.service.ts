@@ -16,4 +16,7 @@ export class SignInService {
   AuthUser(userAuth: userAuth){
     return this.http.post(environment.apiBaseUrl+'/Auth',userAuth);
   }
+  Reset(resetAuth : userAuth){
+    return this.http.post(environment.apiBaseUrl+'/reset',resetAuth)
+  }
 }

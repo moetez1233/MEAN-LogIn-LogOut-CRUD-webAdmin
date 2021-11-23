@@ -15,7 +15,7 @@ export class SignInComponent implements OnInit {
   ngOnInit(): void {
   }
   onSubmit(form: NgForm) {
-    console.log(form.value);
+    //console.log(form.value);
     //form.value.isAdmin=(document.getElementById('flexSwitchCheckDefault') as HTMLInputElement).checked
     //console.log(form.value);
     

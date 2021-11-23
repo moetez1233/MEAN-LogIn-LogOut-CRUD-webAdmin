@@ -1,0 +1,26 @@
+<div id="formContent" style="margin-left: 40%;">
+    <div class="card">
+        <div class="card-header">
+            Reset you password
+        </div>
+        <div class="card-body">
+            <form #Reset="ngForm" (ngSubmit)="Reset.valid && onSubmit(Reset)">
+
+
+                <input type="text" #email="ngModel" [(ngModel)]="SignInService.selectedUser.email" name="email" placeholder="Email" required [ngClass]="{'invalid-textbox' :Reset.submitted && !email.valid }">
+                <div *ngIf="Reset.submitted && email.errors">
+                    <label *ngIf="email.errors.required" class="validation-message">This field is required.</label>
+                </div>
+
+
+
+
+                <!--
+                <input type="text" #email="ngModel" [(ngModel)]="userService.selectedUser.email" name="email" placeholder="email">
+                <input type="password" #password="ngModel" [(ngModel)]="userService.selectedUser.password" name="password" placeholder="password">
+            -->
+                <input type="submit" value="Reset">
+            </form>
+        </div>
+    </div>
+</div>

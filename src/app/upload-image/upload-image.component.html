@@ -1,0 +1,17 @@
+<h1>All Profiles</h1>
+<hr />
+
+<!--
+<h1>test appel juste  img 0</h1>
+<img src="{{image.imagePath}}" style="width: 50%;">
+-->
+<ul *ngFor="let profile of profiles" class="profile">
+    <img [src]="profile.imagePath" style="width: 30%;" [alt]="profile.name" />
+    <div>
+        <span>{{ profile.name }}</span>
+    </div>
+
+</ul>
+<div style="margin-top: 3%;">
+    <button type="button" class="btn btn-success" routerLink="/NavHeader">Add new picture</button>
+</div>
